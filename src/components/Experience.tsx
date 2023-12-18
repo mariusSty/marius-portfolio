@@ -8,10 +8,23 @@ import {
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-export default function Experience() {
+export default function Experience({ isMobileVersion = false }) {
   const computer = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
   );
+  const phone = useGLTF(
+    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf"
+  );
+
+  const model = isMobileVersion ? phone : computer;
+  const polar: [number, number] = isMobileVersion ? [0, 0] : [-0.4, 0.2];
+  const azimuth: [number, number] = isMobileVersion ? [-0.5, 0.5] : [-1, 0.75];
+  const rotation: [number, number, number] = isMobileVersion
+    ? [0.1, -1.5, 0.17]
+    : [0.13, 0.1, 0];
+  const position: [number, number, number] = isMobileVersion
+    ? [0.16, 1.36, 0.08]
+    : [0, 1.56, -1.4];
 
   return (
     <>
@@ -27,9 +40,9 @@ export default function Experience() {
         <Environment preset="city" />
         <PresentationControls
           global
-          rotation={[0.13, 0.1, 0]}
-          polar={[-0.4, 0.2]}
-          azimuth={[-1, 0.75]}
+          rotation={rotation}
+          polar={polar}
+          azimuth={azimuth}
           config={{ mass: 2, tension: 400 }}
           snap={{ mass: 4, tension: 400 }}
         >
@@ -43,13 +56,15 @@ export default function Experience() {
               position={[0, 0.55, -1.15]}
             />
 
-            <primitive object={computer.scene} />
+            <primitive object={model.scene} />
             <Html
               transform
-              wrapperClass="computer-screen"
-              distanceFactor={1.17}
-              position={[0, 1.56, -1.4]}
-              rotation-x={-0.256}
+              wrapperClass={
+                isMobileVersion ? "phone-screen" : "computer-screen"
+              }
+              distanceFactor={isMobileVersion ? 1.21 : 1.17}
+              position={position}
+              rotation-x={isMobileVersion ? 0 : -0.256}
             >
               <iframe src="https://cube-galaxy.vercel.app/" />
             </Html>

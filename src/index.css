@@ -19,3 +19,11 @@ main,
   border-radius: 20px;
   background: #000000;
 }
+
+.phone-screen iframe {
+  width: 500px;
+  height: 1070px;
+  border: none;
+  border-radius: 74px;
+  background: #000000;
+}
