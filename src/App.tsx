@@ -1,4 +1,6 @@
+import { Canvas } from "@react-three/fiber";
 import { useRef, useState } from "react";
+import ComputerScene from "./components/ComputerScene";
 import Experience from "./components/Experience";
 
 function App() {
@@ -20,7 +22,19 @@ function App() {
   return (
     <>
       <main ref={containerRef}>
-        <section className="w-screen h-screen bg-gray-900"></section>
+        <section className="w-screen h-screen bg-gray-900">
+          <Canvas
+            className="touch-none"
+            camera={{
+              fov: 45,
+              near: 0.1,
+              far: 2000,
+              position: [-5, 5, 5],
+            }}
+          >
+            <ComputerScene />
+          </Canvas>
+        </section>
         <section className="w-screen h-screen bg-red-900"></section>
         <section ref={containerRef} className="w-screen h-screen bg-yellow-900">
           <Experience />
