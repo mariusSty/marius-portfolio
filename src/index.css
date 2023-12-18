@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
-  width: 100vw;
-  height: 100vh;
+html,
+body,
+main,
+#root {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.computer-screen iframe {
+  width: 1024px;
+  height: 670px;
+  border: none;
+  border-radius: 20px;
+  background: #000000;
 }
