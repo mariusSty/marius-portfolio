@@ -1,5 +1,17 @@
-import { Environment, useGLTF, useTexture } from "@react-three/drei";
+import {
+  Center,
+  Environment,
+  Sparkles,
+  shaderMaterial,
+  useGLTF,
+  useTexture,
+} from "@react-three/drei";
+import { MaterialNode, extend, useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import * as THREE from "three";
 import { GLTF } from "three/examples/jsm/Addons.js";
+import screenFragmentShader from "../shaders/screen/fragment.glsl";
+import screenVertexShader from "../shaders/screen/vertex.glsl";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -10,16 +22,40 @@ type GLTFResult = GLTF & {
     baked: THREE.Mesh;
   };
 };
+
+const ScreenMaterial = shaderMaterial(
+  {
+    uTime: 0,
+    uColorStart: new THREE.Color(0x090909),
+    uColorEnd: new THREE.Color(0xffcc00),
+  },
+  screenVertexShader,
+  screenFragmentShader
+);
+
+extend({ ScreenMaterial });
+
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    screenMaterial: MaterialNode<ScreenMaterial, typeof ScreenMaterial>;
+  }
+}
+
 export default function ComputerScene() {
+  const screenRef = useRef();
   const { nodes } = useGLTF(
     "./public/models/computer-scene.glb"
   ) as unknown as GLTFResult;
   const skillsTexture = useTexture("./textures/baked.jpg");
 
+  useFrame((_, delta) => {
+    screenRef.current.uTime += delta;
+  });
+
   return (
     <>
       <Environment preset="city" />
-      <group dispose={null}>
+      <group dispose={null} rotation-y={-1}>
         <mesh
           geometry={nodes.LightC.geometry}
           position={[1.174, 0.976, 0.373]}
@@ -48,7 +84,7 @@ export default function ComputerScene() {
           position={[0.13, 0.967, -0.407]}
           rotation={[-2.051, 0, 0]}
         >
-          <meshBasicMaterial color={0xffff44} />
+          <screenMaterial ref={screenRef} />
         </mesh>
         <mesh
           geometry={nodes.baked.geometry}
@@ -59,6 +95,16 @@ export default function ComputerScene() {
           <meshBasicMaterial map={skillsTexture} map-flipY={false} />
         </mesh>
       </group>
+      <Center>
+        <Sparkles
+          size={6}
+          scale={[4, 4, 4]}
+          position-y={1}
+          speed={0.2}
+          count={40}
+          color={0xffcc00}
+        />
+      </Center>
     </>
   );
 }
