@@ -57,7 +57,7 @@ export default function ComputerScene() {
           position={[1.174, 0.976, 0.373]}
           rotation={[0, -0.453, 0]}
         >
-          <meshBasicMaterial color={0xffff44} />
+          <meshBasicMaterial color={0xffba08} />
         </mesh>
 
         <mesh
@@ -65,14 +65,14 @@ export default function ComputerScene() {
           position={[-1.08, 0.976, -0.257]}
           rotation={[-Math.PI, 0.179, -Math.PI]}
         >
-          <meshBasicMaterial color={0xffff44} />
+          <meshBasicMaterial color={0xffba08} />
         </mesh>
         <mesh
           geometry={nodes.LightB.geometry}
           position={[0.29, 0.976, -1.026]}
           rotation={[0, 1.004, 0]}
         >
-          <meshBasicMaterial color={0xffff44} />
+          <meshBasicMaterial color={0xffba08} />
         </mesh>
         <mesh
           geometry={nodes.Screen.geometry}
