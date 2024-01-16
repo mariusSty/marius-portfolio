@@ -15,6 +15,7 @@ import viteIcon from "/images/vite.png";
 import vscodeIcon from "/images/vscode.png";
 
 type LevitatingIcons = {
+  id: string;
   src: string;
   position: [number, number, number];
   rotation: [number, number, number];
@@ -24,6 +25,7 @@ type LevitatingIcons = {
 
 const levitatingIcons: LevitatingIcons[] = [
   {
+    id: "cypress",
     src: cypressIcon,
     position: [-1.7, -0.5, 0],
     rotation: [0, -0.3, 0],
@@ -31,6 +33,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://www.cypress.io/",
   },
   {
+    id: "github",
     src: githubIcon,
     position: [-0.9, -0.5, 0],
     rotation: [0, -1.3, 0],
@@ -38,6 +41,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://github.com/",
   },
   {
+    id: "graphql",
     src: graphqlIcon,
     position: [0.3, 2, 0],
     rotation: [0, 2, 0],
@@ -45,6 +49,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://graphql.org/",
   },
   {
+    id: "jest",
     src: jestIcon,
     position: [1.5, 2, 1],
     rotation: [0, -0.5, 0],
@@ -52,6 +57,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://jestjs.io/",
   },
   {
+    id: "mongodb",
     src: mongodbIcon,
     position: [0, 0, 2],
     rotation: [0, -1, 0],
@@ -59,6 +65,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://www.mongodb.com/",
   },
   {
+    id: "nest",
     src: nestIcon,
     position: [-0.5, 0, 1],
     rotation: [0, -0.4, 0],
@@ -66,6 +73,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://nestjs.com/",
   },
   {
+    id: "next",
     src: nextIcon,
     position: [2, 1.2, 0],
     rotation: [0, -1.4, 0],
@@ -73,6 +81,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://nextjs.org/",
   },
   {
+    id: "node",
     src: nodeIcon,
     position: [0, 1.5, -2],
     rotation: [0, 0, 0],
@@ -80,6 +89,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://nodejs.org/",
   },
   {
+    id: "react",
     src: reactIcon,
     position: [-2, 1, 0],
     rotation: [0, 0.2, 0],
@@ -87,6 +97,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://react.dev/",
   },
   {
+    id: "tailwind",
     src: tailwindIcon,
     position: [-1, 2, 2.5],
     rotation: [0, -2, 0],
@@ -94,6 +105,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://tailwindcss.com/",
   },
   {
+    id: "three",
     src: threeIcon,
     position: [-1.9, 1, 1.8],
     rotation: [0, -0.3, 0],
@@ -101,6 +113,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://threejs.org/",
   },
   {
+    id: "typescript",
     src: typescriptIcon,
     position: [-1, 1, -0.5],
     rotation: [0, 0, 0],
@@ -108,6 +121,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://www.typescriptlang.org/",
   },
   {
+    id: "vite",
     src: viteIcon,
     position: [-1.5, 1.5, -1],
     rotation: [0, 0, 0],
@@ -115,6 +129,7 @@ const levitatingIcons: LevitatingIcons[] = [
     url: "https://vitejs.dev/",
   },
   {
+    id: "vscode",
     src: vscodeIcon,
     position: [0, 2, -0.5],
     rotation: [0, -1.3, 0],
@@ -126,8 +141,8 @@ const levitatingIcons: LevitatingIcons[] = [
 export default function LevitatingIcons() {
   return (
     <>
-      {levitatingIcons.map(({ src, position, rotation, scale, url }) => (
-        <Float>
+      {levitatingIcons.map(({ id, src, position, rotation, scale, url }) => (
+        <Float key={id}>
           <Html transform scale={scale} position={position} rotation={rotation}>
             <img
               src={src}
