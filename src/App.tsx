@@ -1,6 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
+import { GrFormPrevious } from "react-icons/gr";
 import Device from "./Computer";
+import ComputerScene from "./components/ComputerScene";
 import ExpandableCard from "./components/ExpandableCard";
 import Navbar from "./components/Navbar";
 import PresentationSection from "./components/PresentationSection";
@@ -15,6 +17,11 @@ function App() {
 
   const handleOpenAboutMeView = () => {
     setIsAboutMeViewOpened(true);
+  };
+
+  const handleOpenHomeView = () => {
+    setIsProjectViewOpened(false);
+    setIsAboutMeViewOpened(false);
   };
 
   const isViewOpened = isProjectViewOpened || isAboutMeViewOpened;
@@ -41,6 +48,7 @@ function App() {
               handleOpenView={handleOpenProjectView}
             >
               <Canvas
+                resize={{ debounce: 0 }}
                 camera={{
                   fov: 45,
                   near: 0.1,
@@ -58,16 +66,25 @@ function App() {
               handleOpenView={handleOpenAboutMeView}
             >
               <Canvas
+                resize={{ debounce: 0 }}
                 camera={{
                   fov: 45,
                   near: 0.1,
                   far: 2000,
-                  position: [2, 2, 4],
+                  position: [-5, 3, 1],
                 }}
               >
-                <Device isMobileVersion />
+                <ComputerScene />
               </Canvas>
             </ExpandableCard>
+          )}
+          {isViewOpened && (
+            <div
+              onClick={handleOpenHomeView}
+              className="absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-[#F7DBA7] text-[#041F1E] cursor-pointer"
+            >
+              <GrFormPrevious size={32} />
+            </div>
           )}
         </section>
       </main>
