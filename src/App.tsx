@@ -1,81 +1,74 @@
 import { Canvas } from "@react-three/fiber";
-import { GrDown, GrGithub, GrLinkedin, GrMail } from "react-icons/gr";
-import Computer from "./Computer";
-import ComputerScene from "./components/ComputerScene";
-import DeviceScene from "./components/DeviceScene";
+import { useState } from "react";
+import Device from "./Computer";
+import ExpandableCard from "./components/ExpandableCard";
+import Navbar from "./components/Navbar";
+import PresentationSection from "./components/PresentationSection";
 
 function App() {
+  const [isProjectViewOpened, setIsProjectViewOpened] = useState(false);
+  const [isAboutMeViewOpened, setIsAboutMeViewOpened] = useState(false);
+
+  const handleOpenProjectView = () => {
+    setIsProjectViewOpened(true);
+  };
+
+  const handleOpenAboutMeView = () => {
+    setIsAboutMeViewOpened(true);
+  };
+
+  const isViewOpened = isProjectViewOpened || isAboutMeViewOpened;
+
   return (
     <>
       <main>
-        <section className="w-screen h-screen flex items-center justify-center bg-[#000000] text-[#FCA311]">
-          <nav className="w-full fixed flex justify-between items-center top-0 h-16">
-            <span className="text-2xl p-4 bg-[#14213D] rounded-br-3xl border-r-2 border-b-2 border-[#FCA311]">
-              Marius STEPHANY
-            </span>
-            <ul className="flex gap-10 justify-center items-center text-2xl uppercase">
-              <li>Projects</li>
-              <li>About me</li>
-              <li>Contact</li>
-            </ul>
-            <ul className="flex gap-3 justify-center items-center p-4 h-full bg-[#14213D] rounded-bl-3xl border-l-2 border-b-2 border-[#FCA311]">
-              <li>
-                <GrMail size={24} />
-              </li>
-              <li>
-                <GrLinkedin size={24} />
-              </li>
-              <li>
-                <GrGithub size={24} />
-              </li>
-            </ul>
-          </nav>
-          <div className="h-full w-full bg-[#000000]">
-            <Canvas
-              className="touch-none"
-              camera={{
-                fov: 45,
-                near: 0.1,
-                far: 2000,
-                position: [0, 2, 7],
-              }}
+        <section
+          className={`w-screen h-screen grid ${
+            isViewOpened
+              ? "grid grid-cols-1 grid-rows-[40px_1fr_0fr] gap-0 bg-[#041F1E] text-[#F7DBA7]"
+              : "grid grid-cols-2 md:grid-cols-3 grid-rows-[40px_1fr_1fr] gap-4 bg-[#F7DBA7] text-[#041F1E]"
+          } md:grid-rows-[60px_1fr] md:grid-rows transition-all p-4`}
+        >
+          <Navbar />
+          {!isViewOpened && (
+            <div className="flex flex-col justify-evenly items-center col-span-2 md:col-span-1">
+              <PresentationSection />
+            </div>
+          )}
+          {!isAboutMeViewOpened && (
+            <ExpandableCard
+              isViewOpened={isProjectViewOpened}
+              handleOpenView={handleOpenProjectView}
             >
-              <Computer />
-            </Canvas>
-          </div>
-          <div className="absolute bottom-10 w-full flex justify-center items-center">
-            <button className="flex items-center justify-center gap-2 rounded-full border-[#FCA311] bg-[#14213D] border-2 uppercase p-4 text-xl">
-              <GrDown />
-              <span>Scroll down</span>
-              <GrDown />
-            </button>
-          </div>
-        </section>
-        <section className="w-screen h-screen bg-gray-900">
-          <Canvas
-            className="touch-none"
-            camera={{
-              fov: 45,
-              near: 0.1,
-              far: 2000,
-              position: [-4, 4, 4],
-            }}
-          >
-            <ComputerScene />
-          </Canvas>
-        </section>
-        <section className="w-screen h-screen bg-yellow-900">
-          <Canvas
-            className="touch-none"
-            camera={{
-              fov: 45,
-              near: 0.1,
-              far: 2000,
-              position: [-3, 3, 3],
-            }}
-          >
-            <DeviceScene />
-          </Canvas>
+              <Canvas
+                camera={{
+                  fov: 45,
+                  near: 0.1,
+                  far: 2000,
+                  position: [2, 2, 4],
+                }}
+              >
+                <Device />
+              </Canvas>
+            </ExpandableCard>
+          )}
+          {!isProjectViewOpened && (
+            <ExpandableCard
+              isViewOpened={isAboutMeViewOpened}
+              handleOpenView={handleOpenAboutMeView}
+            >
+              <Canvas
+                camera={{
+                  fov: 45,
+                  near: 0.1,
+                  far: 2000,
+                  position: [2, 2, 4],
+                }}
+              >
+                <Device isMobileVersion />
+              </Canvas>
+            </ExpandableCard>
+          )}
         </section>
       </main>
     </>
