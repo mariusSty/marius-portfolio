@@ -73,7 +73,7 @@ function App() {
                 position: [-5, 3, 1],
               }}
             >
-              <ComputerScene />
+              <ComputerScene isViewMode={isAboutMeViewOpened} />
             </Canvas>
           </ExpandableCard>
         )}

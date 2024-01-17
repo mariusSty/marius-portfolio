@@ -81,12 +81,18 @@ export default function DeviceScene({
       </PresentationControls>
       {isViewMode && (
         <Html fullscreen zIndexRange={[0, -1]}>
-          <div className="w-[50%] h-screen flex flex-col justify-center p-8 gap-4 z-0">
+          <div
+            className={`${
+              isWidthBiggerThanHeight
+                ? "w-[50%] h-full gap-4"
+                : "w-full h-[35%] gap-2"
+            } flex flex-col justify-center p-8`}
+          >
             <h1 className="text-3xl">Cube Galaxy</h1>
             <a href="https://cube-galaxy.vercel.app/" target="_blank">
               <h2>https://cube-galaxy.vercel.app/</h2>
             </a>
-            <p className="text-xl">
+            <p className={`${isWidthBiggerThanHeight ? "text-xl" : "text-sm"}`}>
               Speedcubing is a competitive sport that involves solving a variety
               of combination puzzles, the most well-known of which is the 3x3x3
               puzzle (also known as the Rubik's cube), as quickly as possible.

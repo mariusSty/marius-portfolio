@@ -1,10 +1,11 @@
 import {
   Environment,
+  Html,
   shaderMaterial,
   useGLTF,
   useTexture,
 } from "@react-three/drei";
-import { extend, useFrame } from "@react-three/fiber";
+import { extend, useFrame, useThree } from "@react-three/fiber";
 import { geometry } from "maath";
 import { useRef } from "react";
 import * as THREE from "three";
@@ -37,7 +38,7 @@ const ScreenMaterial = shaderMaterial(
 extend({ ScreenMaterial });
 extend({ RoundedPlaneGeometry: geometry.RoundedPlaneGeometry });
 
-export default function ComputerScene() {
+export default function ComputerScene({ isViewMode = false }) {
   const screenRef = useRef();
   const { nodes } = useGLTF(
     "/models/computer-scene.glb"
@@ -47,11 +48,27 @@ export default function ComputerScene() {
   useFrame((_, delta) => {
     screenRef.current.uTime += delta;
   });
+  const { viewport } = useThree();
+  const ratio = viewport.width / viewport.height;
+  const isWidthBiggerThanHeight = ratio > 1;
+  const viewModeScale = isWidthBiggerThanHeight
+    ? viewport.width / 9
+    : viewport.height / 8;
+  const viewModePosX = isWidthBiggerThanHeight ? -viewport.width / 8 : 0;
+  const viewModePosY = isWidthBiggerThanHeight ? 0 : viewport.height / 7;
+  const viewModePosZ = isWidthBiggerThanHeight ? -viewport.width / 6 : 0;
 
   return (
     <>
       <Environment preset="city" />
-      <group dispose={null} rotation-y={-1}>
+      <group
+        dispose={null}
+        rotation-y={-1}
+        position-x={viewModePosX}
+        position-y={viewModePosY}
+        position-z={viewModePosZ}
+        scale={isViewMode ? viewModeScale : viewport.width / 2}
+      >
         <mesh
           geometry={nodes.LightC.geometry}
           position={[1.174, 0.976, 0.373]}
@@ -90,10 +107,21 @@ export default function ComputerScene() {
         >
           <meshBasicMaterial map={skillsTexture} map-flipY={false} />
         </mesh>
-      </group>
 
-      <Fireflies />
-      <LevtitatingIcons />
+        <Fireflies />
+        <LevtitatingIcons />
+      </group>
+      {isViewMode && (
+        <Html fullscreen zIndexRange={[0, -1]}>
+          <div
+            className={`absolute ${
+              isWidthBiggerThanHeight
+                ? "w-[40%] h-full top-0 right-0"
+                : "w-full h-[45%] bottom-0 left-0"
+            } flex justify-center items-center`}
+          ></div>
+        </Html>
+      )}
     </>
   );
 }
