@@ -143,7 +143,13 @@ export default function LevitatingIcons() {
     <>
       {levitatingIcons.map(({ id, src, position, rotation, scale, url }) => (
         <Float key={id}>
-          <Html transform scale={scale} position={position} rotation={rotation}>
+          <Html
+            transform
+            scale={scale}
+            position={position}
+            rotation={rotation}
+            zIndexRange={[0, -1]}
+          >
             <img
               src={src}
               width={40}
