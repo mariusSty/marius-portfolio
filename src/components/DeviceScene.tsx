@@ -50,8 +50,8 @@ export default function DeviceScene({
       >
         <Float
           scale={isViewMode ? viewModeScale : viewport.width / 2}
-          position-y={viewModePosY}
-          position-x={viewModePosX}
+          position-y={isViewMode ? viewModePosY : -1}
+          position-x={isViewMode ? viewModePosX : 0}
           rotationIntensity={0.4}
         >
           <rectAreaLight
@@ -64,19 +64,21 @@ export default function DeviceScene({
           />
 
           <primitive object={model.scene} />
-          <Html
-            transform
-            wrapperClass={isMobileVersion ? "phone-screen" : "computer-screen"}
-            distanceFactor={isMobileVersion ? 1.21 : 1.17}
-            position={position}
-            rotation-x={isMobileVersion ? 0 : -0.256}
-          >
-            {isViewMode ? (
+          {isViewMode ? (
+            <Html
+              transform
+              wrapperClass={
+                isMobileVersion ? "phone-screen" : "computer-screen"
+              }
+              distanceFactor={isMobileVersion ? 1.21 : 1.17}
+              position={position}
+              rotation-x={isMobileVersion ? 0 : -0.256}
+            >
               <iframe src="https://cube-galaxy.vercel.app/" />
-            ) : (
-              <div>Click please...</div>
-            )}
-          </Html>
+            </Html>
+          ) : (
+            <></>
+          )}
         </Float>
       </PresentationControls>
       {isViewMode && (

@@ -12,17 +12,21 @@ export default function ExpandableCard({
   handleOpenView,
 }: ExpandableCardProps) {
   return (
-    <div className="flex justify-center items-center transition-all min-h-0 min-w-0">
+    <div className="relative flex justify-center items-center min-h-0 min-w-0 overflow-hidden rounded-xl">
+      {!isViewOpened && (
+        <span className="absolute bottom-5 left-5 text-4xl text-[#A2AEBB] uppercase z-10">
+          {title}
+        </span>
+      )}
       <div
         onClick={handleOpenView}
-        className={`relative h-full w-full bg-[#1C3144] transition-all 
-        ${isViewOpened ? "" : "cursor-pointer rounded-xl"}`}
+        className={`h-full w-full bg-[#1C3144]
+        ${
+          isViewOpened
+            ? ""
+            : "hover:scale-110 hover:brightness-100 brightness-75 transition-all cursor-pointer"
+        }`}
       >
-        {!isViewOpened && (
-          <span className="absolute top-5 left-5 text-4xl text-[#F87666] uppercase z-10">
-            {title}
-          </span>
-        )}
         {children}
       </div>
     </div>

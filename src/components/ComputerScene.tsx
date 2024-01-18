@@ -64,9 +64,9 @@ export default function ComputerScene({ isViewMode = false }) {
       <group
         dispose={null}
         rotation-y={-1}
-        position-x={viewModePosX}
-        position-y={viewModePosY}
-        position-z={viewModePosZ}
+        position-x={isViewMode ? viewModePosX : 0}
+        position-y={isViewMode ? viewModePosY : 0}
+        position-z={isViewMode ? viewModePosZ : 0}
         scale={isViewMode ? viewModeScale : viewport.width / 2}
       >
         <mesh
@@ -109,7 +109,7 @@ export default function ComputerScene({ isViewMode = false }) {
         </mesh>
 
         <Fireflies />
-        <LevtitatingIcons />
+        {isViewMode && <LevtitatingIcons />}
       </group>
       {isViewMode && (
         <Html fullscreen zIndexRange={[0, -1]}>
