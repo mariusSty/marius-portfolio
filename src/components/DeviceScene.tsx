@@ -7,6 +7,7 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function DeviceScene({
   isMobileVersion = false,
@@ -64,7 +65,7 @@ export default function DeviceScene({
           />
 
           <primitive object={model.scene} />
-          {isViewMode ? (
+          {isViewMode && (
             <Html
               transform
               wrapperClass={
@@ -76,39 +77,119 @@ export default function DeviceScene({
             >
               <iframe src="https://cube-galaxy.vercel.app/" />
             </Html>
-          ) : (
-            <></>
           )}
         </Float>
       </PresentationControls>
       {isViewMode && (
-        <Html fullscreen zIndexRange={[0, -1]}>
+        <Html
+          fullscreen
+          occlude="blending"
+          position={[-1, -1, -2]}
+          zIndexRange={[5, 0]}
+        >
           <div
             className={`${
               isWidthBiggerThanHeight
-                ? "w-[50%] h-full gap-4"
-                : "w-full h-[35%] gap-2"
-            } flex flex-col justify-center p-8`}
+                ? "flex-col w-[70%] h-full gap-4"
+                : "w-full h-[50%] gap-2"
+            } flex justify-center`}
           >
-            <h1 className="text-3xl">Cube Galaxy</h1>
-            <a href="https://cube-galaxy.vercel.app/" target="_blank">
-              <h2>https://cube-galaxy.vercel.app/</h2>
-            </a>
-            <p className={`${isWidthBiggerThanHeight ? "text-xl" : "text-sm"}`}>
-              Speedcubing is a competitive sport that involves solving a variety
-              of combination puzzles, the most well-known of which is the 3x3x3
-              puzzle (also known as the Rubik's cube), as quickly as possible.
-              This timer helps speedcubers to tracks their solves and vizualise
-              their stats.
-            </p>
-            <p>Made with NextJS, React, Tailwind, ThreeJS, TypeScript</p>
+            <div
+              className={`flex flex-col justify-between items-start bg-[#A2AEBB] text-[#1C3144] shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+            ${
+              isWidthBiggerThanHeight
+                ? "rounded-r-3xl h-[75%] w-full pl-28 pr-52 py-16 xl:py-24"
+                : "rounded-b-3xl h-full w-[80%] px-6 sm:px-12 pt-4 sm:pt-8 pb-28"
+            }`}
+            >
+              <div className="flex flex-col gap-2 sm:gap-6">
+                <h1 className="text-xl sm:text-6xl">Cube Galaxy</h1>
+                <p
+                  className={`${
+                    isWidthBiggerThanHeight ? "text-xl" : "text-xs sm:text-sm"
+                  }`}
+                >
+                  Speedcubing is a competitive sport that involves solving a
+                  variety of combination puzzles, the most well-known of which
+                  is the 3x3x3 puzzle (also known as the Rubik's cube), as
+                  quickly as possible. This timer helps speedcubers to tracks
+                  their solves and vizualise their stats.
+                </p>
+              </div>
+              <div className="mb-2">
+                <span className="text-sm sm:text-xl block mb-1 sm:mb-3">
+                  Made with :
+                </span>
+                <div className="flex gap-2">
+                  <a
+                    className="hover:scale-110 transition-transform"
+                    href="https://reactjs.org/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://skillicons.dev/icons?i=react"
+                      alt="React Icon"
+                    />
+                  </a>
+                  <a
+                    className="hover:scale-110 transition-transform"
+                    href="https://nextjs.org/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://skillicons.dev/icons?i=nextjs"
+                      alt="Next.js Icon"
+                    />
+                  </a>
+                  <a
+                    className="hover:scale-110 transition-transform"
+                    href="https://www.typescriptlang.org/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://skillicons.dev/icons?i=typescript"
+                      alt="Typescript Icon"
+                    />
+                  </a>
+                  <a
+                    className="hover:scale-110 transition-transform"
+                    href="https://tailwindcss.com/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://skillicons.dev/icons?i=tailwind"
+                      alt="Tailwind Icon"
+                    />
+                  </a>
+                  <a
+                    className="hover:scale-110 transition-transform"
+                    href="https://threejs.org/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://skillicons.dev/icons?i=threejs"
+                      alt="Three.js Icon"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <a
+                className="rounded-full hover:bg-[#FF715B] bg-[#ffba08] text-sm sm:text-xl w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 flex justify-center items-center gap-3"
+                href="https://cube-galaxy.vercel.app/"
+                target="_blank"
+              >
+                <span>Go to the website</span>
+                <FaExternalLinkAlt size={20} />
+              </a>
+            </div>
           </div>
         </Html>
       )}
       <ContactShadows
         position-y={isMobileVersion ? -2.9 : -2.4}
-        opacity={0.4}
-        scale={5}
+        opacity={1}
+        scale={10}
         blur={2.4}
       />
     </>

@@ -80,7 +80,7 @@ function App() {
         {isViewOpened && (
           <div
             onClick={handleOpenHomeView}
-            className="absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-[#A2AEBB] text-[#1C3144] cursor-pointer"
+            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-[#A2AEBB] text-[#1C3144] cursor-pointer"
           >
             <GrFormPrevious size={32} />
           </div>
