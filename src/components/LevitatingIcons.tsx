@@ -148,7 +148,7 @@ export default function LevitatingIcons() {
             scale={scale}
             position={position}
             rotation={rotation}
-            zIndexRange={[1, 0]}
+            zIndexRange={[6, 5]}
           >
             <img
               src={src}

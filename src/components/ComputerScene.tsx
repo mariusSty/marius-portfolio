@@ -8,12 +8,21 @@ import {
 import { extend, useFrame, useThree } from "@react-three/fiber";
 import { geometry } from "maath";
 import { useRef } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import * as THREE from "three";
 import { GLTF } from "three/examples/jsm/Addons.js";
 import screenFragmentShader from "../shaders/screen/fragment.glsl";
 import screenVertexShader from "../shaders/screen/vertex.glsl";
 import Fireflies from "./Fireflies";
-import LevtitatingIcons from "./LevitatingIcons";
+import LevitatingIcons from "./LevitatingIcons";
+import amiltoneLogo from "/images/amiltoneLogo.png";
+import astekLogo from "/images/astekLogo.png";
+import grandLyonLogo from "/images/grandLyonLogo.png";
+import masteosLogo from "/images/masteosLogo.png";
+import sncfLogo from "/images/sncfLogo.png";
+import sopraSteriaLogo from "/images/sopraSteriaLogo.png";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -62,7 +71,6 @@ export default function ComputerScene({ isViewMode = false }) {
     <>
       <Environment preset="city" />
       <group
-        dispose={null}
         rotation-y={-1}
         position-x={isViewMode ? viewModePosX : 0}
         position-y={isViewMode ? viewModePosY : 0}
@@ -109,17 +117,114 @@ export default function ComputerScene({ isViewMode = false }) {
         </mesh>
 
         <Fireflies />
-        {isViewMode && <LevtitatingIcons />}
+        {isViewMode && <LevitatingIcons />}
       </group>
       {isViewMode && (
-        <Html fullscreen zIndexRange={[0, -1]}>
+        <Html occlude="blending" fullscreen zIndexRange={[5, 0]}>
           <div
             className={`absolute ${
               isWidthBiggerThanHeight
                 ? "w-[40%] h-full top-0 right-0"
                 : "w-full h-[45%] bottom-0 left-0"
             } flex justify-center items-center`}
-          ></div>
+          >
+            <div
+              className={`flex flex-col justify-between items-start bg-[#A2AEBB] text-[#1C3144] shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+            ${
+              isWidthBiggerThanHeight
+                ? "rounded-l-3xl h-[75%] w-full"
+                : "rounded-t-3xl h-full w-[80%]"
+            }`}
+            >
+              <Swiper
+                className="w-[80%] my-4 sm:my-10 flex justify-center items-center h-full"
+                modules={[Pagination]}
+                pagination={{ clickable: true }}
+                style={{
+                  "--swiper-pagination-color": "#FF715B",
+                  "--swiper-pagination-bullet-inactive-color": "#FFBA08",
+                  "--swiper-pagination-bullet-inactive-opacity": "1",
+                  "--swiper-pagination-bullet-size": "16px",
+                  "--swiper-pagination-bullet-horizontal-gap": "6px",
+                }}
+              >
+                <SwiperSlide className="flex flex-col justify-around items-center gap-4 pb-10">
+                  <h1 className="text-2xl md:text-6xl">Companies</h1>
+                  <p className="text-sm sm:text-xl">
+                    I worked for 7 years as a fullstack developer for many
+                    companies like SNCF, Scouts d'Europe, Grand Lyon, InExtenso
+                    and Masteos.
+                  </p>
+                  <div className="grid grid-cols-3 auto-rows-[40px] md:auto-rows-[70px] gap-2 sm:gap-3">
+                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                      <img src={sopraSteriaLogo} alt="Logo Sopra Steria" />
+                    </div>
+                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                      <img src={sncfLogo} alt="Logo SNCF" />
+                    </div>
+                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                      <img src={astekLogo} alt="Logo Astek" />
+                    </div>
+                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                      <img src={grandLyonLogo} alt="Logo Grand Lyon" />
+                    </div>
+                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                      <img src={amiltoneLogo} alt="Logo Amiltone" />
+                    </div>
+                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                      <img src={masteosLogo} alt="Logo Masteos" />
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="flex flex-col justify-around items-center pb-10">
+                  <h1 className="text-2xl md:text-6xl">Skills</h1>
+                  <p className="text-sm sm:text-xl">
+                    I make websites, webapps, mobile apps and desktop apps with
+                    lots of languages and frameworks. But now, I'm specialized
+                    in React, NodeJS and Three.js since 4 years.
+                  </p>
+                  <img
+                    className="hidden sm:block"
+                    src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker,github,vite,jest,mongodb,mysql&perline=5"
+                  />
+                  <img
+                    className="sm:hidden"
+                    src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker&perline=5"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className="flex flex-col justify-around items-center pb-10">
+                  <h1 className="text-2xl md:text-6xl">Links</h1>
+                  <p className="text-sm sm:text-xl">
+                    If you want to know more about my skills, you can check my
+                    LinkedIn profile. My projects on GitHub and CodePen are also
+                    available.
+                  </p>
+                  <div className="flex flex-col justify-center items-center gap-2 sm:gap-4">
+                    <a
+                      href="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
+                      target="_blank"
+                      className="flex gap-2 rounded-lg hover:bg-[#FF715B] bg-[#FFBA08] text-[#1C3144] px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                    >
+                      <span className="text-sm sm:text-xl">
+                        Visit my profile on LinkedIn
+                      </span>
+                      <FaLinkedin size={24} />
+                    </a>
+                    <a
+                      href="https://github.com/mariusSty/"
+                      target="_blank"
+                      className="flex gap-2 rounded-lg hover:bg-[#FF715B] bg-[#FFBA08] text-[#1C3144] px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                    >
+                      <span className="text-sm sm:text-xl">
+                        See my projects on GitHub
+                      </span>
+                      <FaGithub size={24} />
+                    </a>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
         </Html>
       )}
     </>
