@@ -19,6 +19,7 @@ import CompanyLogo from "./CompanyLogo";
 import Fireflies from "./Fireflies";
 import Icon from "./Icons";
 import LevitatingIcons from "./LevitatingIcons";
+import Slide from "./Slide";
 import Typography from "./Typography";
 import amiltoneLogo from "/images/amiltoneLogo.png";
 import astekLogo from "/images/astekLogo.png";
@@ -151,69 +152,84 @@ export default function ComputerScene({ isViewMode = false }) {
                   "--swiper-pagination-bullet-horizontal-gap": "6px",
                 }}
               >
-                <SwiperSlide className="flex flex-col justify-around items-center gap-4 pb-10">
-                  <Typography variant="h1">Companies</Typography>
-                  <Typography>
-                    I worked for 7 years as a fullstack developer for many
-                    companies like SNCF, Scouts d'Europe, Grand Lyon, InExtenso
-                    and Masteos.
-                  </Typography>
-                  <div className="grid grid-cols-3 auto-rows-[40px] md:auto-rows-[70px] gap-2 sm:gap-3">
-                    <CompanyLogo
-                      logo={sopraSteriaLogo}
-                      logoAlt="Logo Sopra Steria"
-                    />
-                    <CompanyLogo logo={sncfLogo} logoAlt="Logo SNCF" />
-                    <CompanyLogo logo={astekLogo} logoAlt="Logo Astek" />
-                    <CompanyLogo
-                      logo={grandLyonLogo}
-                      logoAlt="Logo Grand Lyon"
-                    />
-                    <CompanyLogo logo={amiltoneLogo} logoAlt="Logo Amiltone" />
-                    <CompanyLogo logo={masteosLogo} logoAlt="Logo Masteos" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="flex flex-col justify-around items-center pb-10">
-                  <Typography variant="h1">Skills</Typography>
-                  <Typography>
-                    I make websites, webapps, mobile apps and desktop apps with
-                    lots of languages and frameworks. But now, I'm specialized
-                    in React, NodeJS and Three.js since 4 years.
-                  </Typography>
-                  <img
-                    className="hidden sm:block"
-                    src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker,github,vite,jest,mongodb,mysql&perline=5"
-                  />
-                  <img
-                    className="sm:hidden"
-                    src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker&perline=5"
+                <SwiperSlide>
+                  <Slide
+                    title="Companies"
+                    content="I worked for 7 years as a fullstack developer for many
+                  companies like SNCF, Scouts d'Europe, Grand Lyon, InExtenso
+                and Masteos."
+                    footer={
+                      <div className="grid grid-cols-3 auto-rows-[40px] md:auto-rows-[70px] gap-2 sm:gap-3">
+                        <CompanyLogo
+                          logo={sopraSteriaLogo}
+                          logoAlt="Logo Sopra Steria"
+                        />
+                        <CompanyLogo logo={sncfLogo} logoAlt="Logo SNCF" />
+                        <CompanyLogo logo={astekLogo} logoAlt="Logo Astek" />
+                        <CompanyLogo
+                          logo={grandLyonLogo}
+                          logoAlt="Logo Grand Lyon"
+                        />
+                        <CompanyLogo
+                          logo={amiltoneLogo}
+                          logoAlt="Logo Amiltone"
+                        />
+                        <CompanyLogo
+                          logo={masteosLogo}
+                          logoAlt="Logo Masteos"
+                        />
+                      </div>
+                    }
                   />
                 </SwiperSlide>
+                <SwiperSlide>
+                  <Slide
+                    title="Skills"
+                    content="I make websites, webapps, mobile apps and desktop apps with
+                  lots of languages and frameworks. But now, I'm specialized
+                  in React, NodeJS and Three.js since 4 years."
+                    footer={
+                      <>
+                        <img
+                          className="hidden sm:block"
+                          src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker,github,vite,jest,mongodb,mysql&perline=5"
+                        />
+                        <img
+                          className="sm:hidden"
+                          src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker&perline=5"
+                        />
+                      </>
+                    }
+                  />
+                </SwiperSlide>
                 <SwiperSlide className="flex flex-col justify-around items-center pb-10">
-                  <Typography variant="h1">Links</Typography>
-                  <Typography>
+                  <Slide
+                    title="Links"
+                    content="
                     If you want to know more about my skills, you can check my
                     LinkedIn profile. My projects on GitHub and CodePen are also
-                    available.
-                  </Typography>
-                  <div className="flex flex-col justify-center items-center gap-2 sm:gap-4">
-                    <a
-                      href="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
-                      target="_blank"
-                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
-                    >
-                      <Typography>Visit my profile on LinkedIn</Typography>
-                      <Icon component={FaLinkedin} />
-                    </a>
-                    <a
-                      href="https://github.com/mariusSty/"
-                      target="_blank"
-                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
-                    >
-                      <Typography>See my projects on GitHub</Typography>
-                      <Icon component={FaGithub} />
-                    </a>
-                  </div>
+                    available."
+                    footer={
+                      <div className="flex flex-col justify-center items-center gap-2 sm:gap-4">
+                        <a
+                          href="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
+                          target="_blank"
+                          className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                        >
+                          <Typography>Visit my profile on LinkedIn</Typography>
+                          <Icon component={FaLinkedin} />
+                        </a>
+                        <a
+                          href="https://github.com/mariusSty/"
+                          target="_blank"
+                          className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                        >
+                          <Typography>See my projects on GitHub</Typography>
+                          <Icon component={FaGithub} />
+                        </a>
+                      </div>
+                    }
+                  />
                 </SwiperSlide>
               </Swiper>
             </div>
