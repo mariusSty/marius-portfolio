@@ -10,11 +10,11 @@ type ButtonProps = {
 export default function Button({ link, text, icon }: ButtonProps) {
   return (
     <a
-      className="flex justify-center items-center gap-3 w-full sm:w-auto rounded-full hover:bg-secondary-variant bg-secondary px-4 sm:px-6 py-2 sm:py-3"
+      className="flex justify-center items-center gap-3 w-full sm:w-auto rounded-lg hover:bg-gradient-to-l bg-gradient-to-r from-secondary to-secondary-variant px-4 sm:px-6 py-2 sm:py-3"
       href={link}
       target="_blank"
     >
-      <Typography>{text}</Typography>
+      <Typography colorVariant="primary">{text}</Typography>
       {icon && icon}
     </a>
   );

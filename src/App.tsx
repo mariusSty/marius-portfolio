@@ -4,6 +4,7 @@ import { GrFormPrevious } from "react-icons/gr";
 import ComputerScene from "./components/ComputerScene";
 import DeviceScene from "./components/DeviceScene";
 import ExpandableCard from "./components/ExpandableCard";
+import Icon from "./components/Icon";
 import PresentationSection from "./components/PresentationSection";
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
   const isViewOpened = isProjectViewOpened || isAboutMeViewOpened;
 
   return (
-    <main>
+    <main className="bg-primary">
       <section
         className={`w-screen h-screen grid ${
           isViewOpened
@@ -34,11 +35,7 @@ function App() {
             : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 p-4"
         } md:grid-rows-1 transition-all`}
       >
-        {!isViewOpened && (
-          <div className="flex flex-col justify-evenly items-center col-span-2 md:col-span-1">
-            <PresentationSection />
-          </div>
-        )}
+        {!isViewOpened && <PresentationSection />}
         {!isAboutMeViewOpened && (
           <ExpandableCard
             title="Projects"
@@ -80,9 +77,9 @@ function App() {
         {isViewOpened && (
           <div
             onClick={handleOpenHomeView}
-            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-primary-variant cursor-pointer"
+            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-primary cursor-pointer"
           >
-            <GrFormPrevious className="text-primary" size={32} />
+            <Icon component={GrFormPrevious} sizeLabel="lg" color="secondary" />
           </div>
         )}
       </section>

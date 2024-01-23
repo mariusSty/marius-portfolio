@@ -21,7 +21,6 @@ export default function ExpandableCard({
       {!isViewOpened && (
         <Typography
           variant="h2"
-          colorVariant="primary-variant"
           className="absolute bottom-5 left-5 uppercase z-10"
         >
           {title}
@@ -29,7 +28,7 @@ export default function ExpandableCard({
       )}
       <div
         onClick={handleOpenView}
-        className={`h-full w-full bg-primary
+        className={`h-full w-full bg-primary-variant
         ${
           isViewOpened
             ? ""

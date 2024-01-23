@@ -28,7 +28,7 @@ export default function ProjectsPanel({
       } flex justify-center items-center`}
     >
       <div
-        className={`flex flex-col justify-between items-start bg-primary-variant shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+        className={`flex flex-col justify-between items-start bg-primary shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
     ${
       isWidthBiggerThanHeight
         ? "rounded-l-3xl h-[75%] w-full"

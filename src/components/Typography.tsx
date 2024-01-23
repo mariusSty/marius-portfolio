@@ -7,6 +7,7 @@ type TypographyProps = {
     | "secondary"
     | "primary-variant"
     | "secondary-variant";
+  isGradient?: boolean;
 };
 
 const sizes = new Map([
@@ -26,13 +27,20 @@ export default function Typography({
   children,
   variant = "p",
   className = "",
-  colorVariant = "primary",
+  colorVariant = "secondary",
+  isGradient = false,
 }: TypographyProps) {
   const sizeClass = sizes.get(variant);
   const colorClass = colors.get(colorVariant);
+  const gradientClasses =
+    "bg-gradient-to-r from-secondary to-secondary-variant bg-clip-text text-transparent";
 
   return (
-    <span className={`${sizeClass} ${colorClass} ${className}`}>
+    <span
+      className={`${sizeClass} 
+      ${isGradient ? gradientClasses : colorClass} 
+      ${className}`}
+    >
       {children}
     </span>
   );

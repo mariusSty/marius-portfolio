@@ -20,7 +20,7 @@ export default function AboutMePanel({
       } flex justify-center`}
     >
       <div
-        className={`flex flex-col justify-between items-start bg-primary-variant shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+        className={`flex flex-col justify-between items-start bg-primary shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
 ${
   isWidthBiggerThanHeight
     ? "rounded-r-3xl h-[75%] w-full pl-28 pr-52 py-16 xl:py-24"
@@ -33,7 +33,7 @@ ${
             Speedcubing is a competitive sport that involves solving a variety
             of combination puzzles, the most well-known of which is the 3x3x3
             puzzle (also known as the Rubik's cube), as quickly as possible.
-            This timer helps speedcubers to tracks their solves and vizualise
+            This timer helps speedcubers to tracks their solves and visualize
             their stats.
           </Typography>
         </div>
