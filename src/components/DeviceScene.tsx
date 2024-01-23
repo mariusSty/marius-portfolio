@@ -8,6 +8,8 @@ import {
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Button from "./Button";
+import Icon from "./Icons";
 import SkillIcon from "./SkillIcon";
 import Typography from "./Typography";
 
@@ -147,14 +149,11 @@ export default function DeviceScene({
                 </div>
               </div>
 
-              <a
-                className="rounded-full hover:bg-secondary-variant bg-secondary w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 flex justify-center items-center gap-3"
-                href="https://cube-galaxy.vercel.app/"
-                target="_blank"
-              >
-                <Typography>Go to the website</Typography>
-                <FaExternalLinkAlt className="text-primary" size={20} />
-              </a>
+              <Button
+                link="https://cube-galaxy.vercel.app/"
+                text="Go to the website"
+                icon={<Icon component={FaExternalLinkAlt} />}
+              />
             </div>
           </div>
         </Html>

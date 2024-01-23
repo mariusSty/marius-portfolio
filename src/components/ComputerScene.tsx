@@ -15,12 +15,12 @@ import * as THREE from "three";
 import { GLTF } from "three/examples/jsm/Addons.js";
 import screenFragmentShader from "../shaders/screen/fragment.glsl";
 import screenVertexShader from "../shaders/screen/vertex.glsl";
+import Button from "./Button";
 import CompanyLogo from "./CompanyLogo";
 import Fireflies from "./Fireflies";
 import Icon from "./Icons";
 import LevitatingIcons from "./LevitatingIcons";
 import Slide from "./Slide";
-import Typography from "./Typography";
 import amiltoneLogo from "/images/amiltoneLogo.png";
 import astekLogo from "/images/astekLogo.png";
 import grandLyonLogo from "/images/grandLyonLogo.png";
@@ -211,22 +211,16 @@ export default function ComputerScene({ isViewMode = false }) {
                     available."
                     footer={
                       <div className="flex flex-col justify-center items-center gap-2 sm:gap-4">
-                        <a
-                          href="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
-                          target="_blank"
-                          className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
-                        >
-                          <Typography>Visit my profile on LinkedIn</Typography>
-                          <Icon component={FaLinkedin} />
-                        </a>
-                        <a
-                          href="https://github.com/mariusSty/"
-                          target="_blank"
-                          className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
-                        >
-                          <Typography>See my projects on GitHub</Typography>
-                          <Icon component={FaGithub} />
-                        </a>
+                        <Button
+                          link="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
+                          text="Visit my profile on LinkedIn"
+                          icon={<Icon component={FaLinkedin} />}
+                        />
+                        <Button
+                          link="https://github.com/mariusSty/"
+                          text="See my projects on GitHub"
+                          icon={<Icon component={FaGithub} />}
+                        />
                       </div>
                     }
                   />
