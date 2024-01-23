@@ -15,6 +15,7 @@ import * as THREE from "three";
 import { GLTF } from "three/examples/jsm/Addons.js";
 import screenFragmentShader from "../shaders/screen/fragment.glsl";
 import screenVertexShader from "../shaders/screen/vertex.glsl";
+import CompanyLogo from "./CompanyLogo";
 import Fireflies from "./Fireflies";
 import Icon from "./Icons";
 import LevitatingIcons from "./LevitatingIcons";
@@ -158,24 +159,18 @@ export default function ComputerScene({ isViewMode = false }) {
                     and Masteos.
                   </Typography>
                   <div className="grid grid-cols-3 auto-rows-[40px] md:auto-rows-[70px] gap-2 sm:gap-3">
-                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
-                      <img src={sopraSteriaLogo} alt="Logo Sopra Steria" />
-                    </div>
-                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
-                      <img src={sncfLogo} alt="Logo SNCF" />
-                    </div>
-                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
-                      <img src={astekLogo} alt="Logo Astek" />
-                    </div>
-                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
-                      <img src={grandLyonLogo} alt="Logo Grand Lyon" />
-                    </div>
-                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
-                      <img src={amiltoneLogo} alt="Logo Amiltone" />
-                    </div>
-                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
-                      <img src={masteosLogo} alt="Logo Masteos" />
-                    </div>
+                    <CompanyLogo
+                      logo={sopraSteriaLogo}
+                      logoAlt="Logo Sopra Steria"
+                    />
+                    <CompanyLogo logo={sncfLogo} logoAlt="Logo SNCF" />
+                    <CompanyLogo logo={astekLogo} logoAlt="Logo Astek" />
+                    <CompanyLogo
+                      logo={grandLyonLogo}
+                      logoAlt="Logo Grand Lyon"
+                    />
+                    <CompanyLogo logo={amiltoneLogo} logoAlt="Logo Amiltone" />
+                    <CompanyLogo logo={masteosLogo} logoAlt="Logo Masteos" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="flex flex-col justify-around items-center pb-10">
