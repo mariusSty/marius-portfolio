@@ -16,6 +16,7 @@ import { GLTF } from "three/examples/jsm/Addons.js";
 import screenFragmentShader from "../shaders/screen/fragment.glsl";
 import screenVertexShader from "../shaders/screen/vertex.glsl";
 import Fireflies from "./Fireflies";
+import Icon from "./Icons";
 import LevitatingIcons from "./LevitatingIcons";
 import Typography from "./Typography";
 import amiltoneLogo from "/images/amiltoneLogo.png";
@@ -207,7 +208,7 @@ export default function ComputerScene({ isViewMode = false }) {
                       className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
                     >
                       <Typography>Visit my profile on LinkedIn</Typography>
-                      <FaLinkedin className="text-primary" size={24} />
+                      <Icon component={FaLinkedin} />
                     </a>
                     <a
                       href="https://github.com/mariusSty/"
@@ -215,7 +216,7 @@ export default function ComputerScene({ isViewMode = false }) {
                       className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
                     >
                       <Typography>See my projects on GitHub</Typography>
-                      <FaGithub className="text-primary" size={24} />
+                      <Icon component={FaGithub} />
                     </a>
                   </div>
                 </SwiperSlide>
