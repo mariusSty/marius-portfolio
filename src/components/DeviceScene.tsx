@@ -8,6 +8,7 @@ import {
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import SkillIcon from "./SkillIcon";
 import Typography from "./Typography";
 
 export default function DeviceScene({
@@ -118,56 +119,31 @@ export default function DeviceScene({
                   Made with :
                 </Typography>
                 <div className="flex gap-2">
-                  <a
-                    className="hover:scale-110 transition-transform"
-                    href="https://reactjs.org/"
-                    target="_blank"
-                  >
-                    <img
-                      src="https://skillicons.dev/icons?i=react"
-                      alt="React Icon"
-                    />
-                  </a>
-                  <a
-                    className="hover:scale-110 transition-transform"
-                    href="https://nextjs.org/"
-                    target="_blank"
-                  >
-                    <img
-                      src="https://skillicons.dev/icons?i=nextjs"
-                      alt="Next.js Icon"
-                    />
-                  </a>
-                  <a
-                    className="hover:scale-110 transition-transform"
-                    href="https://www.typescriptlang.org/"
-                    target="_blank"
-                  >
-                    <img
-                      src="https://skillicons.dev/icons?i=typescript"
-                      alt="Typescript Icon"
-                    />
-                  </a>
-                  <a
-                    className="hover:scale-110 transition-transform"
-                    href="https://tailwindcss.com/"
-                    target="_blank"
-                  >
-                    <img
-                      src="https://skillicons.dev/icons?i=tailwind"
-                      alt="Tailwind Icon"
-                    />
-                  </a>
-                  <a
-                    className="hover:scale-110 transition-transform"
-                    href="https://threejs.org/"
-                    target="_blank"
-                  >
-                    <img
-                      src="https://skillicons.dev/icons?i=threejs"
-                      alt="Three.js Icon"
-                    />
-                  </a>
+                  <SkillIcon
+                    skill="react"
+                    skillAlt="React Icon"
+                    link="https://reactjs.org/"
+                  />
+                  <SkillIcon
+                    skill="nextjs"
+                    skillAlt="Next.js Icon"
+                    link="https://nextjs.org/"
+                  />
+                  <SkillIcon
+                    skill="typescript"
+                    skillAlt="Typescript Icon"
+                    link="https://www.typescriptlang.org/"
+                  />
+                  <SkillIcon
+                    skill="tailwind"
+                    skillAlt="Tailwind Icon"
+                    link="https://tailwindcss.com/"
+                  />
+                  <SkillIcon
+                    skill="threejs"
+                    skillAlt="Three.js Icon"
+                    link="https://threejs.org/"
+                  />
                 </div>
               </div>
 
