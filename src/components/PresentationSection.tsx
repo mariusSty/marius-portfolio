@@ -1,5 +1,5 @@
 import { GrGithub, GrLinkedin, GrMail } from "react-icons/gr";
-import Icon from "./Icons";
+import Icon from "./Icon";
 import Typography from "./Typography";
 
 export default function PresentationSection() {

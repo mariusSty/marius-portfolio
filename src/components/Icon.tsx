@@ -1,6 +1,6 @@
 import { IconType } from "react-icons";
 
-type IconsProps = {
+type IconProps = {
   sizeLabel?: "sm" | "lg";
   color?: "primary" | "secondary" | "primary-variant" | "secondary-variant";
   className?: string;
@@ -26,7 +26,7 @@ export default function Icon({
   className = "",
   link,
   component: IconComponent,
-}: IconsProps) {
+}: IconProps) {
   const size = sizes.get(sizeLabel);
   const colorClass = colors.get(color);
 

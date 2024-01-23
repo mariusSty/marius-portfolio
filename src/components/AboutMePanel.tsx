@@ -1,6 +1,6 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Button from "./Button";
-import Icon from "./Icons";
+import Icon from "./Icon";
 import SkillIcon from "./SkillIcon";
 import Typography from "./Typography";
 

@@ -3,7 +3,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "./Button";
 import CompanyLogo from "./CompanyLogo";
-import Icon from "./Icons";
+import Icon from "./Icon";
 import Slide from "./Slide";
 import amiltoneLogo from "/images/amiltoneLogo.png";
 import astekLogo from "/images/astekLogo.png";
