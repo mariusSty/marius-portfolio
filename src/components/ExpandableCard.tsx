@@ -1,3 +1,5 @@
+import Typography from "./Typography";
+
 type ExpandableCardProps = {
   title: string;
   children: React.ReactNode;
@@ -17,9 +19,13 @@ export default function ExpandableCard({
        ${isViewOpened ? "" : "rounded-xl"}`}
     >
       {!isViewOpened && (
-        <span className="absolute bottom-5 left-5 text-4xl text-primary-variant uppercase z-10">
+        <Typography
+          variant="h2"
+          colorVariant="primary-variant"
+          className="absolute bottom-5 left-5 uppercase z-10"
+        >
           {title}
-        </span>
+        </Typography>
       )}
       <div
         onClick={handleOpenView}

@@ -1,11 +1,12 @@
 import { GrGithub, GrLinkedin, GrMail } from "react-icons/gr";
+import Typography from "./Typography";
 
 export default function PresentationSection() {
   return (
     <>
       <div className="flex flex-col gap-3">
-        <span className="text-5xl">Hi ! I'm Marius</span>
-        <span className="text-3xl">I'm web and mobile developer</span>
+        <Typography variant="h1">Marius STEPHANY</Typography>
+        <Typography variant="h2">I'm web and mobile developer</Typography>
       </div>
       <ul className="flex justify-center items-center gap-4">
         <li>

@@ -8,6 +8,7 @@ import {
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Typography from "./Typography";
 
 export default function DeviceScene({
   isMobileVersion = false,
@@ -95,7 +96,7 @@ export default function DeviceScene({
             } flex justify-center`}
           >
             <div
-              className={`flex flex-col justify-between items-start bg-primary-variant text-primary shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+              className={`flex flex-col justify-between items-start bg-primary-variant shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
             ${
               isWidthBiggerThanHeight
                 ? "rounded-r-3xl h-[75%] w-full pl-28 pr-52 py-16 xl:py-24"
@@ -103,23 +104,19 @@ export default function DeviceScene({
             }`}
             >
               <div className="flex flex-col gap-2 sm:gap-6">
-                <h1 className="text-xl sm:text-6xl">Cube Galaxy</h1>
-                <p
-                  className={`${
-                    isWidthBiggerThanHeight ? "text-xl" : "text-xs sm:text-sm"
-                  }`}
-                >
+                <Typography variant="h1">Cube Galaxy</Typography>
+                <Typography>
                   Speedcubing is a competitive sport that involves solving a
                   variety of combination puzzles, the most well-known of which
                   is the 3x3x3 puzzle (also known as the Rubik's cube), as
                   quickly as possible. This timer helps speedcubers to tracks
                   their solves and vizualise their stats.
-                </p>
+                </Typography>
               </div>
               <div className="mb-2">
-                <span className="text-sm sm:text-xl block mb-1 sm:mb-3">
+                <Typography className="block mb-1 sm:mb-3">
                   Made with :
-                </span>
+                </Typography>
                 <div className="flex gap-2">
                   <a
                     className="hover:scale-110 transition-transform"
@@ -175,12 +172,12 @@ export default function DeviceScene({
               </div>
 
               <a
-                className="rounded-full hover:bg-secondary-variant bg-secondary text-sm sm:text-xl w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 flex justify-center items-center gap-3"
+                className="rounded-full hover:bg-secondary-variant bg-secondary w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 flex justify-center items-center gap-3"
                 href="https://cube-galaxy.vercel.app/"
                 target="_blank"
               >
-                <span>Go to the website</span>
-                <FaExternalLinkAlt size={20} />
+                <Typography>Go to the website</Typography>
+                <FaExternalLinkAlt className="text-primary" size={20} />
               </a>
             </div>
           </div>

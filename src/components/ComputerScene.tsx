@@ -17,6 +17,7 @@ import screenFragmentShader from "../shaders/screen/fragment.glsl";
 import screenVertexShader from "../shaders/screen/vertex.glsl";
 import Fireflies from "./Fireflies";
 import LevitatingIcons from "./LevitatingIcons";
+import Typography from "./Typography";
 import amiltoneLogo from "/images/amiltoneLogo.png";
 import astekLogo from "/images/astekLogo.png";
 import grandLyonLogo from "/images/grandLyonLogo.png";
@@ -129,7 +130,7 @@ export default function ComputerScene({ isViewMode = false }) {
             } flex justify-center items-center`}
           >
             <div
-              className={`flex flex-col justify-between items-start bg-primary-variant text-primary shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+              className={`flex flex-col justify-between items-start bg-primary-variant shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
             ${
               isWidthBiggerThanHeight
                 ? "rounded-l-3xl h-[75%] w-full"
@@ -149,12 +150,12 @@ export default function ComputerScene({ isViewMode = false }) {
                 }}
               >
                 <SwiperSlide className="flex flex-col justify-around items-center gap-4 pb-10">
-                  <h1 className="text-2xl md:text-6xl">Companies</h1>
-                  <p className="text-sm sm:text-xl">
+                  <Typography variant="h1">Companies</Typography>
+                  <Typography>
                     I worked for 7 years as a fullstack developer for many
                     companies like SNCF, Scouts d'Europe, Grand Lyon, InExtenso
                     and Masteos.
-                  </p>
+                  </Typography>
                   <div className="grid grid-cols-3 auto-rows-[40px] md:auto-rows-[70px] gap-2 sm:gap-3">
                     <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
                       <img src={sopraSteriaLogo} alt="Logo Sopra Steria" />
@@ -177,12 +178,12 @@ export default function ComputerScene({ isViewMode = false }) {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="flex flex-col justify-around items-center pb-10">
-                  <h1 className="text-2xl md:text-6xl">Skills</h1>
-                  <p className="text-sm sm:text-xl">
+                  <Typography variant="h1">Skills</Typography>
+                  <Typography>
                     I make websites, webapps, mobile apps and desktop apps with
                     lots of languages and frameworks. But now, I'm specialized
                     in React, NodeJS and Three.js since 4 years.
-                  </p>
+                  </Typography>
                   <img
                     className="hidden sm:block"
                     src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker,github,vite,jest,mongodb,mysql&perline=5"
@@ -193,32 +194,28 @@ export default function ComputerScene({ isViewMode = false }) {
                   />
                 </SwiperSlide>
                 <SwiperSlide className="flex flex-col justify-around items-center pb-10">
-                  <h1 className="text-2xl md:text-6xl">Links</h1>
-                  <p className="text-sm sm:text-xl">
+                  <Typography variant="h1">Links</Typography>
+                  <Typography>
                     If you want to know more about my skills, you can check my
                     LinkedIn profile. My projects on GitHub and CodePen are also
                     available.
-                  </p>
+                  </Typography>
                   <div className="flex flex-col justify-center items-center gap-2 sm:gap-4">
                     <a
                       href="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
                       target="_blank"
-                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary text-primary px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
                     >
-                      <span className="text-sm sm:text-xl">
-                        Visit my profile on LinkedIn
-                      </span>
-                      <FaLinkedin size={24} />
+                      <Typography>Visit my profile on LinkedIn</Typography>
+                      <FaLinkedin className="text-primary" size={24} />
                     </a>
                     <a
                       href="https://github.com/mariusSty/"
                       target="_blank"
-                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary text-primary px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary px-2 sm:px-4 py-1 sm:py-2 transition-all"
                     >
-                      <span className="text-sm sm:text-xl">
-                        See my projects on GitHub
-                      </span>
-                      <FaGithub size={24} />
+                      <Typography>See my projects on GitHub</Typography>
+                      <FaGithub className="text-primary" size={24} />
                     </a>
                   </div>
                 </SwiperSlide>
