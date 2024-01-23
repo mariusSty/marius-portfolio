@@ -12,7 +12,10 @@ export default function ExpandableCard({
   handleOpenView,
 }: ExpandableCardProps) {
   return (
-    <div className="relative flex justify-center items-center min-h-0 min-w-0 overflow-hidden rounded-xl">
+    <div
+      className={`relative flex justify-center items-center min-h-0 min-w-0 overflow-hidden transition-all
+       ${isViewOpened ? "" : "rounded-xl"}`}
+    >
       {!isViewOpened && (
         <span className="absolute bottom-5 left-5 text-4xl text-primary-variant uppercase z-10">
           {title}
