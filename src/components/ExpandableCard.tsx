@@ -14,13 +14,13 @@ export default function ExpandableCard({
   return (
     <div className="relative flex justify-center items-center min-h-0 min-w-0 overflow-hidden rounded-xl">
       {!isViewOpened && (
-        <span className="absolute bottom-5 left-5 text-4xl text-[#A2AEBB] uppercase z-10">
+        <span className="absolute bottom-5 left-5 text-4xl text-primary-variant uppercase z-10">
           {title}
         </span>
       )}
       <div
         onClick={handleOpenView}
-        className={`h-full w-full bg-[#1C3144]
+        className={`h-full w-full bg-primary
         ${
           isViewOpened
             ? ""

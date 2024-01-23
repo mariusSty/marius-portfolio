@@ -129,7 +129,7 @@ export default function ComputerScene({ isViewMode = false }) {
             } flex justify-center items-center`}
           >
             <div
-              className={`flex flex-col justify-between items-start bg-[#A2AEBB] text-[#1C3144] shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+              className={`flex flex-col justify-between items-start bg-primary-variant text-primary shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
             ${
               isWidthBiggerThanHeight
                 ? "rounded-l-3xl h-[75%] w-full"
@@ -156,22 +156,22 @@ export default function ComputerScene({ isViewMode = false }) {
                     and Masteos.
                   </p>
                   <div className="grid grid-cols-3 auto-rows-[40px] md:auto-rows-[70px] gap-2 sm:gap-3">
-                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
                       <img src={sopraSteriaLogo} alt="Logo Sopra Steria" />
                     </div>
-                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
                       <img src={sncfLogo} alt="Logo SNCF" />
                     </div>
-                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
                       <img src={astekLogo} alt="Logo Astek" />
                     </div>
-                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
                       <img src={grandLyonLogo} alt="Logo Grand Lyon" />
                     </div>
-                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
                       <img src={amiltoneLogo} alt="Logo Amiltone" />
                     </div>
-                    <div className="rounded-lg border-2 border-[#1C3144] flex justify-center items-center p-3">
+                    <div className="rounded-lg border-2 border-primary flex justify-center items-center p-3">
                       <img src={masteosLogo} alt="Logo Masteos" />
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export default function ComputerScene({ isViewMode = false }) {
                     <a
                       href="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
                       target="_blank"
-                      className="flex gap-2 rounded-lg hover:bg-[#FF715B] bg-[#FFBA08] text-[#1C3144] px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary text-primary px-2 sm:px-4 py-1 sm:py-2 transition-all"
                     >
                       <span className="text-sm sm:text-xl">
                         Visit my profile on LinkedIn
@@ -213,7 +213,7 @@ export default function ComputerScene({ isViewMode = false }) {
                     <a
                       href="https://github.com/mariusSty/"
                       target="_blank"
-                      className="flex gap-2 rounded-lg hover:bg-[#FF715B] bg-[#FFBA08] text-[#1C3144] px-2 sm:px-4 py-1 sm:py-2 transition-all"
+                      className="flex gap-2 rounded-lg hover:bg-secondary-variant bg-secondary text-primary px-2 sm:px-4 py-1 sm:py-2 transition-all"
                     >
                       <span className="text-sm sm:text-xl">
                         See my projects on GitHub

@@ -95,7 +95,7 @@ export default function DeviceScene({
             } flex justify-center`}
           >
             <div
-              className={`flex flex-col justify-between items-start bg-[#A2AEBB] text-[#1C3144] shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
+              className={`flex flex-col justify-between items-start bg-primary-variant text-primary shadow-[15px_20px_10px_rgba(0,0,0,0.2)]
             ${
               isWidthBiggerThanHeight
                 ? "rounded-r-3xl h-[75%] w-full pl-28 pr-52 py-16 xl:py-24"
@@ -175,7 +175,7 @@ export default function DeviceScene({
               </div>
 
               <a
-                className="rounded-full hover:bg-[#FF715B] bg-[#ffba08] text-sm sm:text-xl w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 flex justify-center items-center gap-3"
+                className="rounded-full hover:bg-secondary-variant bg-secondary text-sm sm:text-xl w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 flex justify-center items-center gap-3"
                 href="https://cube-galaxy.vercel.app/"
                 target="_blank"
               >

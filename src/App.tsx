@@ -30,8 +30,8 @@ function App() {
       <section
         className={`w-screen h-screen grid ${
           isViewOpened
-            ? "grid grid-cols-1 grid-rows-[1fr_0fr] gap-0 bg-[#1C3144] text-[#A2AEBB]"
-            : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 text-[#1C3144] p-4"
+            ? "grid grid-cols-1 grid-rows-[1fr_0fr] gap-0"
+            : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 text-primary p-4"
         } md:grid-rows-1 transition-all`}
       >
         {!isViewOpened && (
@@ -80,7 +80,7 @@ function App() {
         {isViewOpened && (
           <div
             onClick={handleOpenHomeView}
-            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-[#A2AEBB] text-[#1C3144] cursor-pointer"
+            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-primary-variant text-primary cursor-pointer"
           >
             <GrFormPrevious size={32} />
           </div>

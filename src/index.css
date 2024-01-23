@@ -5,6 +5,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: 28 49 68;
+    --color-primary-variant: 162 174 187;
+    --color-secondary: 255 186 8;
+    --color-secondary-variant: 255 113 91;
+  }
+}
+
 html,
 body,
 main,
