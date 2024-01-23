@@ -10,6 +10,9 @@ export default {
         "secondary-variant":
           "rgb(var(--color-secondary-variant) / <alpha-value>)",
       },
+      fontFamily: {
+        sans: ["Kanit", "sans-serif"],
+      },
     },
   },
   plugins: [],
