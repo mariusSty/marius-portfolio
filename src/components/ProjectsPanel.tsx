@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -39,13 +40,15 @@ export default function ProjectsPanel({
           className="w-[80%] my-4 sm:my-10 flex justify-center items-center h-full"
           modules={[Pagination]}
           pagination={{ clickable: true }}
-          style={{
-            "--swiper-pagination-color": "#FF715B",
-            "--swiper-pagination-bullet-inactive-color": "#FFBA08",
-            "--swiper-pagination-bullet-inactive-opacity": "1",
-            "--swiper-pagination-bullet-size": "16px",
-            "--swiper-pagination-bullet-horizontal-gap": "6px",
-          }}
+          style={
+            {
+              "--swiper-pagination-color": "#FF715B",
+              "--swiper-pagination-bullet-inactive-color": "#FFBA08",
+              "--swiper-pagination-bullet-inactive-opacity": "1",
+              "--swiper-pagination-bullet-size": "16px",
+              "--swiper-pagination-bullet-horizontal-gap": "6px",
+            } as CSSProperties
+          }
         >
           <SwiperSlide>
             <Slide
