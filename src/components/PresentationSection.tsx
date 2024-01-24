@@ -9,30 +9,24 @@ export default function PresentationSection() {
         <Typography variant="h1" isGradient>
           Marius STEPHANY
         </Typography>
-        <Typography variant="h2" isGradient>
-          Web and mobile developer
-        </Typography>
+        <Typography variant="h2">Web and mobile developer</Typography>
       </div>
       <div className="flex gap-10">
         <div className="flex flex-col justify-center items-center gap-3">
           <Typography variant="h1" isGradient>
             7+
           </Typography>
-          <Typography variant="p" isGradient>
-            Years of experience
-          </Typography>
+          <Typography variant="p">Years of experience</Typography>
         </div>
         <div className="flex flex-col justify-center items-center gap-3">
           <Typography variant="h1" isGradient>
             10+
           </Typography>
-          <Typography variant="p" isGradient>
-            Projects worked
-          </Typography>
+          <Typography variant="p">Projects worked</Typography>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-secondary to-secondary-variant p-1 rounded-lg">
-        <div className="flex justify-center items-center gap-4 p-4 bg-primary rounded-lg">
+      <div className="overflow-hidden rounded-lg">
+        <div className="flex justify-center items-center gap-4 p-4 border-gradient-secondary-to-variant border-4">
           <Icon
             link="mailto:marius.stephany@gmail.com"
             component={GrMail}

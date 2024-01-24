@@ -14,6 +14,31 @@
   }
 }
 
+.bg-radial-gradient-primary-to-variant {
+  background: radial-gradient(
+    at center,
+    rgba(var(--color-primary-variant)),
+    rgba(var(--color-primary))
+  );
+}
+
+.bg-radial-gradient-variant-to-primary {
+  background: radial-gradient(
+    at center,
+    rgba(var(--color-primary)),
+    rgba(var(--color-primary-variant))
+  );
+}
+
+.border-gradient-secondary-to-variant {
+  border-image: linear-gradient(
+      to right,
+      rgba(var(--color-secondary)),
+      rgba(var(--color-secondary-variant))
+    )
+    1;
+}
+
 .computer-screen iframe {
   width: 1024px;
   height: 670px;

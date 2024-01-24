@@ -27,12 +27,12 @@ function App() {
   const isViewOpened = isProjectViewOpened || isAboutMeViewOpened;
 
   return (
-    <main className="bg-primary">
+    <main className="bg-radial-gradient-primary-to-variant">
       <section
         className={`w-screen h-screen grid ${
           isViewOpened
             ? "grid grid-cols-1 grid-rows-[1fr_0fr] gap-0"
-            : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 p-4"
+            : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-8 p-8"
         } md:grid-rows-1 transition-all`}
       >
         {!isViewOpened && <PresentationSection />}

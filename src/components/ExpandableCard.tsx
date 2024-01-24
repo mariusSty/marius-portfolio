@@ -16,7 +16,11 @@ export default function ExpandableCard({
   return (
     <div
       className={`relative flex justify-center items-center min-h-0 min-w-0 overflow-hidden transition-all
-       ${isViewOpened ? "" : "rounded-xl"}`}
+       ${
+         isViewOpened
+           ? "bg-radial-gradient-variant-to-primary"
+           : "bg-primary rounded-xl"
+       }`}
     >
       {!isViewOpened && (
         <Typography
@@ -28,7 +32,7 @@ export default function ExpandableCard({
       )}
       <div
         onClick={handleOpenView}
-        className={`h-full w-full bg-primary-variant
+        className={`h-full w-full
         ${
           isViewOpened
             ? ""
