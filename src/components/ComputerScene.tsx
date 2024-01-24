@@ -5,7 +5,7 @@ import {
   useGLTF,
   useTexture,
 } from "@react-three/drei";
-import { extend, useFrame, useThree } from "@react-three/fiber";
+import { MaterialNode, extend, useFrame, useThree } from "@react-three/fiber";
 import { geometry } from "maath";
 import { useRef } from "react";
 import * as THREE from "three";
@@ -39,15 +39,23 @@ const ScreenMaterial = shaderMaterial(
 extend({ ScreenMaterial });
 extend({ RoundedPlaneGeometry: geometry.RoundedPlaneGeometry });
 
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    screenMaterial: MaterialNode<THREE.ShaderMaterial, typeof ScreenMaterial>;
+  }
+}
+
 export default function ComputerScene({ isViewMode = false }) {
-  const screenRef = useRef();
+  const screenRef = useRef<THREE.ShaderMaterial & { uTime: number }>(null);
   const { nodes } = useGLTF(
     "/models/computer-scene.glb"
   ) as unknown as GLTFResult;
   const skillsTexture = useTexture("./textures/baked.jpg");
 
   useFrame((_, delta) => {
-    screenRef.current.uTime += delta;
+    if (screenRef.current) {
+      screenRef.current.uTime += delta;
+    }
   });
   const { viewport } = useThree();
   const ratio = viewport.width / viewport.height;
