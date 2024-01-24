@@ -12,9 +12,9 @@ import * as THREE from "three";
 import { GLTF } from "three/examples/jsm/Addons.js";
 import screenFragmentShader from "../shaders/screen/fragment.glsl";
 import screenVertexShader from "../shaders/screen/vertex.glsl";
+import AboutMePanel from "./AboutMePanel";
 import Fireflies from "./Fireflies";
 import LevitatingIcons from "./LevitatingIcons";
-import ProjectsPanel from "./ProjectsPanel";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -113,7 +113,7 @@ export default function ComputerScene({ isViewMode = false }) {
       </group>
       {isViewMode && (
         <Html occlude="blending" fullscreen zIndexRange={[5, 0]}>
-          <ProjectsPanel isWidthBiggerThanHeight={isWidthBiggerThanHeight} />
+          <AboutMePanel isWidthBiggerThanHeight={isWidthBiggerThanHeight} />
         </Html>
       )}
     </>

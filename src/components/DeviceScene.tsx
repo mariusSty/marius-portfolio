@@ -7,7 +7,7 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-import AboutMePanel from "./AboutMePanel";
+import ProjectsPanel from "./ProjectsPanel";
 
 export default function DeviceScene({
   isMobileVersion = false,
@@ -87,7 +87,7 @@ export default function DeviceScene({
           position={[-1, -1, -2]}
           zIndexRange={[5, 0]}
         >
-          <AboutMePanel isWidthBiggerThanHeight={isWidthBiggerThanHeight} />
+          <ProjectsPanel isWidthBiggerThanHeight={isWidthBiggerThanHeight} />
         </Html>
       )}
       <ContactShadows
