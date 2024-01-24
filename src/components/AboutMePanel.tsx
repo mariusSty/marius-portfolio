@@ -54,8 +54,7 @@ export default function AboutMePanel({
             <Slide
               title="Companies"
               content="I worked for 7 years as a fullstack developer for many
-          companies like SNCF, Scouts d'Europe, Grand Lyon, InExtenso
-        and Masteos."
+          companies and startups. I could work on many projects with teams of 2 to 15 developers."
               footer={
                 <div className="grid grid-cols-3 auto-rows-[40px] md:auto-rows-[70px] gap-2 sm:gap-3">
                   <CompanyLogo
@@ -74,9 +73,9 @@ export default function AboutMePanel({
           <SwiperSlide>
             <Slide
               title="Skills"
-              content="I make websites, webapps, mobile apps and desktop apps with
+              content="I make websites, mobile apps and desktop apps with
           lots of languages and frameworks. But now, I'm specialized
-          in React, NodeJS and Three.js since 4 years."
+          in React and NodeJS since 4 years. I also practice 3D with ThreeJS in my free time."
               footer={
                 <>
                   <img
@@ -91,13 +90,12 @@ export default function AboutMePanel({
               }
             />
           </SwiperSlide>
-          <SwiperSlide className="flex flex-col justify-around items-center pb-10">
+          <SwiperSlide>
             <Slide
               title="Links"
               content="
             If you want to know more about my skills, you can check my
-            LinkedIn profile. My projects on GitHub and CodePen are also
-            available."
+            GitHub profile. If you want to know more about my career or send me a message, my LinkedIn profile is also available."
               footer={
                 <div className="flex flex-col justify-center items-center gap-2 sm:gap-4">
                   <Button

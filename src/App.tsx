@@ -32,7 +32,7 @@ function App() {
         className={`w-screen h-screen grid ${
           isViewOpened
             ? "grid grid-cols-1 grid-rows-[1fr_0fr] gap-0"
-            : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-8 p-8"
+            : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 p-4 sm:gap-8 sm:p-8"
         } md:grid-rows-1 transition-all`}
       >
         {!isViewOpened && <PresentationSection />}
@@ -77,7 +77,7 @@ function App() {
         {isViewOpened && (
           <div
             onClick={handleOpenHomeView}
-            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-primary cursor-pointer"
+            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-primary cursor-pointer border-secondary border-2"
           >
             <Icon component={GrFormPrevious} sizeLabel="lg" color="secondary" />
           </div>

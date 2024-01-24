@@ -12,7 +12,7 @@ type TypographyProps = {
 
 const sizes = new Map([
   ["h1", "text-2xl md:text-6xl"],
-  ["h2", "text-4xl"],
+  ["h2", "text-xl md:text-4xl"],
   ["p", "text-sm sm:text-xl"],
 ]);
 

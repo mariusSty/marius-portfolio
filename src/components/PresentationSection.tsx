@@ -5,7 +5,7 @@ import Typography from "./Typography";
 export default function PresentationSection() {
   return (
     <div className="flex flex-col justify-evenly items-center col-span-2 md:col-span-1">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col justify-center items-center gap-3">
         <Typography variant="h1" isGradient>
           Marius STEPHANY
         </Typography>
