@@ -27,8 +27,10 @@ ${
     : "rounded-b-3xl h-full w-[80%] px-6 sm:px-12 pt-4 sm:pt-8 pb-28"
 }`}
       >
-        <div className="flex flex-col gap-2 sm:gap-6">
-          <Typography variant="h1">Cube Galaxy</Typography>
+        <div className="flex flex-col items-start gap-2 sm:gap-6">
+          <Typography variant="h1" isGradient>
+            Cube Galaxy
+          </Typography>
           <Typography>
             Speedcubing is a competitive sport that involves solving a variety
             of combination puzzles, the most well-known of which is the 3x3x3
