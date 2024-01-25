@@ -3,7 +3,6 @@ import {
   Environment,
   Float,
   Html,
-  PresentationControls,
   useGLTF,
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
@@ -21,8 +20,6 @@ export default function DeviceScene({
   );
 
   const model = isMobileVersion ? phone : computer;
-  const polar: [number, number] = isMobileVersion ? [0, 0] : [-0.4, 0.2];
-  const azimuth: [number, number] = isMobileVersion ? [-1, 0.5] : [-1, 0.75];
   const rotation: [number, number, number] = isMobileVersion
     ? [-0.1, -0.3, 0]
     : [0.13, 0.1, 0];
@@ -41,45 +38,35 @@ export default function DeviceScene({
   return (
     <>
       <Environment preset="city" />
-      <PresentationControls
-        global
+      <Float
+        scale={isViewMode ? viewModeScale : viewport.width / 2}
+        position-y={isViewMode ? viewModePosY : -1}
+        position-x={isViewMode ? viewModePosX : 0}
+        rotationIntensity={0.4}
         rotation={rotation}
-        polar={polar}
-        azimuth={azimuth}
-        config={{ mass: 2, tension: 400 }}
-        snap={{ mass: 4, tension: 400 }}
       >
-        <Float
-          scale={isViewMode ? viewModeScale : viewport.width / 2}
-          position-y={isViewMode ? viewModePosY : -1}
-          position-x={isViewMode ? viewModePosX : 0}
-          rotationIntensity={0.4}
-        >
-          <rectAreaLight
-            width={2.5}
-            height={1.65}
-            intensity={65}
-            color="#151e3f"
-            rotation={[-0.1, Math.PI, 0]}
-            position={[0, 0.55, -1.15]}
-          />
+        <rectAreaLight
+          width={2.5}
+          height={1.65}
+          intensity={65}
+          color="#151e3f"
+          rotation={[-0.1, Math.PI, 0]}
+          position={[0, 0.55, -1.15]}
+        />
 
-          <primitive object={model.scene} />
-          {isViewMode && (
-            <Html
-              transform
-              wrapperClass={
-                isMobileVersion ? "phone-screen" : "computer-screen"
-              }
-              distanceFactor={isMobileVersion ? 1.21 : 1.17}
-              position={position}
-              rotation-x={isMobileVersion ? 0 : -0.256}
-            >
-              <iframe src="https://cube-galaxy.vercel.app/" />
-            </Html>
-          )}
-        </Float>
-      </PresentationControls>
+        <primitive object={model.scene} />
+        {isViewMode && (
+          <Html
+            transform
+            wrapperClass={isMobileVersion ? "phone-screen" : "computer-screen"}
+            distanceFactor={isMobileVersion ? 1.21 : 1.17}
+            position={position}
+            rotation-x={isMobileVersion ? 0 : -0.256}
+          >
+            <iframe src="https://cube-galaxy.vercel.app/" />
+          </Html>
+        )}
+      </Float>
       {isViewMode && (
         <Html
           fullscreen
