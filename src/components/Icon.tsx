@@ -2,7 +2,12 @@ import { IconType } from "react-icons";
 
 type IconProps = {
   sizeLabel?: "sm" | "lg";
-  color?: "primary" | "secondary" | "primary-variant" | "secondary-variant";
+  color?:
+    | "white"
+    | "primary"
+    | "secondary"
+    | "primary-variant"
+    | "secondary-variant";
   className?: string;
   link?: string;
   component: IconType;
@@ -18,11 +23,12 @@ const colors = new Map([
   ["secondary", "text-secondary"],
   ["primary-variant", "text-primary-variant"],
   ["secondary-variant", "text-secondary-variant"],
+  ["white", "text-white"],
 ]);
 
 export default function Icon({
   sizeLabel = "sm",
-  color = "primary",
+  color = "white",
   className = "",
   link,
   component: IconComponent,

@@ -3,6 +3,7 @@ type TypographyProps = {
   variant?: "h1" | "h2" | "p";
   className?: string;
   colorVariant?:
+    | "white"
     | "primary"
     | "secondary"
     | "primary-variant"
@@ -21,13 +22,14 @@ const colors = new Map([
   ["secondary", "text-secondary"],
   ["primary-variant", "text-primary-variant"],
   ["secondary-variant", "text-secondary-variant"],
+  ["white", "text-white"],
 ]);
 
 export default function Typography({
   children,
   variant = "p",
   className = "",
-  colorVariant = "secondary",
+  colorVariant = "white",
   isGradient = false,
 }: TypographyProps) {
   const sizeClass = sizes.get(variant);

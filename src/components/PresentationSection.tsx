@@ -32,21 +32,18 @@ export default function PresentationSection() {
             component={GrMail}
             className="hover:rotate-12 hover:scale-110"
             sizeLabel="lg"
-            color="secondary"
           />
           <Icon
             link="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
             component={GrLinkedin}
             className="hover:rotate-12 hover:scale-110"
             sizeLabel="lg"
-            color="secondary"
           />
           <Icon
             link="https://github.com/mariusSty"
             component={GrGithub}
             className="hover:rotate-12 hover:scale-110"
             sizeLabel="lg"
-            color="secondary"
           />
         </div>
       </div>

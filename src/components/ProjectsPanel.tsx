@@ -73,7 +73,7 @@ ${
         <Button
           link="https://cube-galaxy.vercel.app/"
           text="Go to the website"
-          icon={<Icon component={FaExternalLinkAlt} />}
+          icon={<Icon component={FaExternalLinkAlt} color="primary" />}
         />
       </div>
     </div>

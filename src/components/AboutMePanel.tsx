@@ -101,12 +101,12 @@ export default function AboutMePanel({
                   <Button
                     link="https://www.linkedin.com/in/marius-stephany-8bb7542a2/"
                     text="Visit my profile on LinkedIn"
-                    icon={<Icon component={FaLinkedin} />}
+                    icon={<Icon component={FaLinkedin} color="primary" />}
                   />
                   <Button
                     link="https://github.com/mariusSty/"
                     text="See my projects on GitHub"
-                    icon={<Icon component={FaGithub} />}
+                    icon={<Icon component={FaGithub} color="primary" />}
                   />
                 </div>
               }

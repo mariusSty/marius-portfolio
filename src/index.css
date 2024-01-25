@@ -16,7 +16,7 @@
 
 .bg-radial-gradient-primary-to-variant {
   background: radial-gradient(
-    at center,
+    at right bottom,
     rgba(var(--color-primary-variant)),
     rgba(var(--color-primary))
   );
@@ -24,7 +24,7 @@
 
 .bg-radial-gradient-variant-to-primary {
   background: radial-gradient(
-    at center,
+    at center bottom,
     rgba(var(--color-primary)),
     rgba(var(--color-primary-variant))
   );
