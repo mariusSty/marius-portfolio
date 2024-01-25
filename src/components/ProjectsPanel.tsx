@@ -16,7 +16,7 @@ export default function ProjectsPanel({
       className={`${
         isWidthBiggerThanHeight
           ? "flex-col w-[70%] h-full gap-4"
-          : "w-full h-[50%] gap-2"
+          : "w-full h-[60%] gap-2"
       } flex justify-center`}
     >
       <div
@@ -24,7 +24,7 @@ export default function ProjectsPanel({
 ${
   isWidthBiggerThanHeight
     ? "rounded-r-3xl h-[75%] w-full pl-28 pr-52 py-16 xl:py-24"
-    : "rounded-b-3xl h-full w-[80%] px-6 sm:px-12 pt-4 sm:pt-8 pb-28"
+    : "rounded-b-3xl h-full w-[80%] px-6 sm:px-12 pt-4 sm:pt-8 pb-16 sm:pb-28"
 }`}
       >
         <div className="flex flex-col items-start gap-2 sm:gap-6">

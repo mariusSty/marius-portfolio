@@ -32,8 +32,8 @@ export default function DeviceScene({
   const viewModeScale = isWidthBiggerThanHeight
     ? viewport.width / 8
     : viewport.height / 6;
-  const viewModePosX = isWidthBiggerThanHeight ? viewport.width / 4 : 0;
-  const viewModePosY = isWidthBiggerThanHeight ? -1 : -viewport.height / 2;
+  const viewModePosX = isWidthBiggerThanHeight ? viewport.width / 3.8 : -0.3;
+  const viewModePosY = isWidthBiggerThanHeight ? -1.5 : -viewport.height / 1.5;
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function DeviceScene({
         scale={isViewMode ? viewModeScale : viewport.width / 2}
         position-y={isViewMode ? viewModePosY : -1}
         position-x={isViewMode ? viewModePosX : 0}
-        rotationIntensity={0.4}
+        rotationIntensity={0.2}
         rotation={rotation}
       >
         <rectAreaLight
