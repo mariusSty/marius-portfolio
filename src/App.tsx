@@ -29,7 +29,7 @@ function App() {
   return (
     <main className="bg-radial-gradient-primary-to-variant">
       <section
-        className={`w-screen h-screen grid ${
+        className={`w-dvh h-dvh grid ${
           isViewOpened
             ? "grid grid-cols-1 grid-rows-[1fr_0fr] gap-0"
             : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 p-4 sm:gap-8 sm:p-8"
