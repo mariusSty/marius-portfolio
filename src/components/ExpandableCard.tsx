@@ -15,7 +15,8 @@ export default function ExpandableCard({
 }: ExpandableCardProps) {
   return (
     <div
-      className={`relative flex justify-center items-center min-h-0 min-w-0 overflow-hidden transition-all
+      onClick={handleOpenView}
+      className={`group relative flex justify-center items-center min-h-0 min-w-0 overflow-hidden cursor-pointer
        ${
          isViewOpened
            ? "bg-radial-gradient-variant-to-primary"
@@ -31,12 +32,11 @@ export default function ExpandableCard({
         </Typography>
       )}
       <div
-        onClick={handleOpenView}
         className={`h-full w-full
         ${
           isViewOpened
             ? ""
-            : "hover:scale-110 hover:brightness-100 brightness-75 transition-all cursor-pointer"
+            : "group-hover:scale-110 group-hover:brightness-100 brightness-75 transition-all"
         }`}
       >
         {children}
