@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "./Button";
 import CompanyLogo from "./CompanyLogo";
 import Icon from "./Icon";
+import SkillIcon from "./SkillIcon";
 import Slide from "./Slide";
 import amiltoneLogo from "/images/amiltoneLogo.png";
 import astekLogo from "/images/astekLogo.png";
@@ -98,16 +99,83 @@ export default function AboutMePanel({
           lots of languages and frameworks. But now, I'm specialized
           in React and NodeJS since 4 years. I also practice 3D with ThreeJS in my free time."
               footer={
-                <>
-                  <img
-                    className="hidden sm:block"
-                    src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker,github,vite,jest,mongodb,mysql&perline=5"
+                <div className="grid grid-cols-5 gap-2">
+                  <SkillIcon
+                    skill="react"
+                    skillAlt="React Icon"
+                    link="https://reactjs.org/"
                   />
-                  <img
-                    className="sm:hidden"
-                    src="https://skillicons.dev/icons?i=react,nodejs,threejs,next,nest,typescript,tailwind,sass,graphql,docker&perline=5"
+                  <SkillIcon
+                    skill="nodejs"
+                    skillAlt="Node.js Icon"
+                    link="https://nodejs.org/"
                   />
-                </>
+                  <SkillIcon
+                    skill="threejs"
+                    skillAlt="Three.js Icon"
+                    link="https://threejs.org/"
+                  />
+                  <SkillIcon
+                    skill="nextjs"
+                    skillAlt="Next.js Icon"
+                    link="https://nextjs.org/"
+                  />
+                  <SkillIcon
+                    skill="nest"
+                    skillAlt="Nest Icon"
+                    link="https://nestjs.com/"
+                  />
+                  <SkillIcon
+                    skill="typescript"
+                    skillAlt="Typescript Icon"
+                    link="https://www.typescriptlang.org/"
+                  />
+                  <SkillIcon
+                    skill="tailwind"
+                    skillAlt="Tailwind Icon"
+                    link="https://tailwindcss.com/"
+                  />
+                  <SkillIcon
+                    skill="sass"
+                    skillAlt="Sass Icon"
+                    link="https://sass-lang.com/"
+                  />
+                  <SkillIcon
+                    skill="graphql"
+                    skillAlt="GraphQL Icon"
+                    link="https://graphql.org/"
+                  />
+                  <SkillIcon
+                    skill="docker"
+                    skillAlt="Docker Icon"
+                    link="https://www.docker.com/"
+                  />
+                  <SkillIcon
+                    skill="github"
+                    skillAlt="GitHub Icon"
+                    link="https://github.com/"
+                  />
+                  <SkillIcon
+                    skill="vite"
+                    skillAlt="Vite Icon"
+                    link="https://vitejs.dev/"
+                  />
+                  <SkillIcon
+                    skill="jest"
+                    skillAlt="Jest Icon"
+                    link="https://jestjs.io/"
+                  />
+                  <SkillIcon
+                    skill="mongodb"
+                    skillAlt="MongoDB Icon"
+                    link="https://www.mongodb.com/"
+                  />
+                  <SkillIcon
+                    skill="mysql"
+                    skillAlt="MySQL Icon"
+                    link="https://www.mysql.com/"
+                  />
+                </div>
               }
             />
           </SwiperSlide>
