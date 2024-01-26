@@ -60,12 +60,33 @@ export default function AboutMePanel({
                   <CompanyLogo
                     logo={sopraSteriaLogo}
                     logoAlt="Logo Sopra Steria"
+                    link="https://www.soprasteria.com/fr"
                   />
-                  <CompanyLogo logo={sncfLogo} logoAlt="Logo SNCF" />
-                  <CompanyLogo logo={astekLogo} logoAlt="Logo Astek" />
-                  <CompanyLogo logo={grandLyonLogo} logoAlt="Logo Grand Lyon" />
-                  <CompanyLogo logo={amiltoneLogo} logoAlt="Logo Amiltone" />
-                  <CompanyLogo logo={masteosLogo} logoAlt="Logo Masteos" />
+                  <CompanyLogo
+                    logo={sncfLogo}
+                    logoAlt="Logo SNCF"
+                    link="https://www.sncf.com/fr"
+                  />
+                  <CompanyLogo
+                    logo={astekLogo}
+                    logoAlt="Logo Astek"
+                    link="https://astekgroup.fr/"
+                  />
+                  <CompanyLogo
+                    logo={grandLyonLogo}
+                    logoAlt="Logo Grand Lyon"
+                    link="https://www.grandlyon.com/"
+                  />
+                  <CompanyLogo
+                    logo={amiltoneLogo}
+                    logoAlt="Logo Amiltone"
+                    link="https://www.amiltone.com/"
+                  />
+                  <CompanyLogo
+                    logo={masteosLogo}
+                    logoAlt="Logo Masteos"
+                    link="https://www.masteos.com/"
+                  />
                 </div>
               }
             />
