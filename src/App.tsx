@@ -33,7 +33,7 @@ function App() {
           isViewOpened
             ? "grid grid-cols-1 grid-rows-[1fr_0fr] gap-0"
             : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 p-4 sm:gap-8 sm:p-8"
-        } md:grid-rows-1 transition-all`}
+        } md:grid-rows-1`}
       >
         {!isViewOpened && <PresentationSection />}
         {!isAboutMeViewOpened && (
