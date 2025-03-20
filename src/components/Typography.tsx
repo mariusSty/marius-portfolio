@@ -35,7 +35,7 @@ export default function Typography({
   const sizeClass = sizes.get(variant);
   const colorClass = colors.get(colorVariant);
   const gradientClasses =
-    "bg-gradient-to-r from-secondary to-secondary-variant bg-clip-text text-transparent";
+    "bg-linear-to-r from-secondary to-secondary-variant bg-clip-text text-transparent";
 
   return (
     <span

@@ -27,9 +27,9 @@ function App() {
   const isViewOpened = isProjectViewOpened || isAboutMeViewOpened;
 
   return (
-    <main className="bg-radial-gradient-primary-to-variant">
+    <main className="bg-radial-gradient-primary-to-variant size-full">
       <section
-        className={`w-dvh h-dvh grid ${
+        className={`size-full grid ${
           isViewOpened
             ? "grid grid-cols-1 grid-rows-[1fr_0fr] gap-0"
             : "grid grid-cols-2 md:grid-cols-3 grid-rows-[1fr_1fr] gap-4 p-4 sm:gap-8 sm:p-8"
@@ -77,7 +77,7 @@ function App() {
         {isViewOpened && (
           <div
             onClick={handleOpenHomeView}
-            className="z-10 absolute bottom-5 left-5 w-10 h-10 transition-transform hover:scale-125 flex justify-center items-center rounded-full bg-primary cursor-pointer border-secondary border-2"
+            className="absolute z-10 flex items-center justify-center w-10 h-10 transition-transform border-2 rounded-full cursor-pointer bottom-5 left-5 hover:scale-125 bg-primary border-secondary"
           >
             <Icon component={GrFormPrevious} sizeLabel="lg" color="secondary" />
           </div>

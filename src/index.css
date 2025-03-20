@@ -1,40 +1,56 @@
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "swiper/css" layer(base);
+@import "swiper/css/navigation" layer(base);
+@import "swiper/css/pagination" layer(base);
+@import "tailwindcss";
+
+@theme {
+  --color-primary: rgb(28 49 68);
+  --color-primary-variant: rgb(191 215 234);
+  --color-secondary: rgb(255 186 8);
+  --color-secondary-variant: rgb(255 113 91);
+
+  --font-sans: Kanit, sans-serif;
+}
 
 @layer base {
-  :root {
-    --color-primary: 28 49 68;
-    --color-primary-variant: 191 215 234;
-    --color-secondary: 255 186 8;
-    --color-secondary-variant: 255 113 91;
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
 .bg-radial-gradient-primary-to-variant {
   background: radial-gradient(
     at right bottom,
-    rgba(var(--color-primary-variant)),
-    rgba(var(--color-primary))
+    var(--color-primary-variant),
+    var(--color-primary)
   );
 }
 
 .bg-radial-gradient-variant-to-primary {
   background: radial-gradient(
     at center bottom,
-    rgba(var(--color-primary)),
-    rgba(var(--color-primary-variant))
+    var(--color-primary),
+    var(--color-primary-variant)
   );
 }
 
 .border-gradient-secondary-to-variant {
   border-image: linear-gradient(
       to right,
-      rgba(var(--color-secondary)),
-      rgba(var(--color-secondary-variant))
+      var(--color-secondary),
+      var(--color-secondary-variant)
     )
     1;
 }
